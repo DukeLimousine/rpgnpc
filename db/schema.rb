@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_011526) do
+ActiveRecord::Schema.define(version: 2020_07_27_024654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "name_types", force: :cascade do |t|
-    t.string "type"
+  create_table "name_classifications", force: :cascade do |t|
+    t.string "classification"
+  end
+
+  create_table "names", force: :cascade do |t|
+    t.integer "name_classification_id"
+    t.string "name"
+    t.integer "race_id"
+    t.boolean "epic"
+    t.integer "gender"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

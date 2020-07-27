@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_classification_id: 1
+  name: MyString
+  race_id: 1
+  epic: false
+  gender: 1
+
+two:
+  name_classification_id: 1
+  name: MyString
+  race_id: 1
+  epic: false
+  gender: 1

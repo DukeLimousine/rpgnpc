@@ -1,2 +1,0 @@
-class NameType < ApplicationRecord
-end
