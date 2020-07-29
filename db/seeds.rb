@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+['barbarian',
+'bard',
+'cleric',
+'druid',
+'fighter',
+'monk',
+'paladin',
+'ranger',
+'rogue',
+'sorcerer',
+'wizard'].each do |c| 
+	CharClass.create(name: c)
+end
+
+['fine',
+'diminutive',
+'tiny',
+'small',
+'medium',
+'large',
+'huge',
+'gargantuan',
+'colossal'].each do |s|
+	Size.create(name: s)
+end

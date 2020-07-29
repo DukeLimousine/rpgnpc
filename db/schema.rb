@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_032434) do
+ActiveRecord::Schema.define(version: 2020_07_29_165448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alignments", force: :cascade do |t|
+    t.string "law_axis"
+    t.string "good_axis"
+  end
+
+  create_table "char_classes", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "name_classifications", force: :cascade do |t|
     t.string "classification"
@@ -30,6 +39,10 @@ ActiveRecord::Schema.define(version: 2020_07_27_032434) do
   end
 
   create_table "races", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "sizes", force: :cascade do |t|
     t.string "name"
   end
 
