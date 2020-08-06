@@ -5,6 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+['human',
+'dwarf',
+'elf',
+'gnome',
+'half-elf',
+'half-orc',
+'halfling'].each do |r|
+	Race.create(name: r)
+end
+
 ['barbarian',
 'bard',
 'cleric',
