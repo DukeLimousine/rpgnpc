@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_165448) do
+ActiveRecord::Schema.define(version: 2020_08_06_195526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ability_classifications", force: :cascade do |t|
+    t.string "classification"
+  end
 
   create_table "alignments", force: :cascade do |t|
     t.string "law_axis"
@@ -22,6 +26,14 @@ ActiveRecord::Schema.define(version: 2020_07_29_165448) do
 
   create_table "char_classes", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "creature_classifications", force: :cascade do |t|
+    t.string "classification"
+  end
+
+  create_table "item_classifications", force: :cascade do |t|
+    t.string "classification"
   end
 
   create_table "name_classifications", force: :cascade do |t|

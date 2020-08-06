@@ -1,0 +1,2 @@
+class ItemClassification < ApplicationRecord
+end

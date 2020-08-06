@@ -1,0 +1,2 @@
+class AbilityClassification < ApplicationRecord
+end
