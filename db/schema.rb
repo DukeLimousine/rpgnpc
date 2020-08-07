@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_010319) do
+ActiveRecord::Schema.define(version: 2020_08_07_171943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,19 @@ ActiveRecord::Schema.define(version: 2020_08_07_010319) do
     t.string "classification"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "priority"
+    t.integer "item_classification_id"
+    t.boolean "magic"
+    t.boolean "repeatable"
+    t.integer "charges"
+    t.integer "times_per_day"
+    t.integer "cost"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "name_classifications", force: :cascade do |t|
     t.string "classification"
   end
@@ -85,6 +98,13 @@ ActiveRecord::Schema.define(version: 2020_08_07_010319) do
     t.string "descriptor"
   end
 
+  create_table "spell_descriptors_spells", id: false, force: :cascade do |t|
+    t.bigint "spell_descriptor_id", null: false
+    t.bigint "spell_id", null: false
+    t.index ["spell_descriptor_id"], name: "index_spell_descriptors_spells_on_spell_descriptor_id"
+    t.index ["spell_id"], name: "index_spell_descriptors_spells_on_spell_id"
+  end
+
   create_table "spells", force: :cascade do |t|
     t.string "name"
     t.integer "level"
@@ -92,13 +112,6 @@ ActiveRecord::Schema.define(version: 2020_08_07_010319) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "spells_spell_descriptors", id: false, force: :cascade do |t|
-    t.bigint "spell_id"
-    t.bigint "spell_descriptor_id"
-    t.index ["spell_descriptor_id"], name: "index_spells_spell_descriptors_on_spell_descriptor_id"
-    t.index ["spell_id"], name: "index_spells_spell_descriptors_on_spell_id"
   end
 
   create_table "traits", force: :cascade do |t|

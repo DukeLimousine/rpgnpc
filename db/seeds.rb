@@ -106,5 +106,8 @@ Alignment.create(law_axis: 'chaotic', good_axis: 'evil')
 	SpellDescriptor.create(descriptor: d)
 end
 
+#create sample spell Fireball and then associate its descriptor
+Spell.create(name: "fireball", level: 3, list: "wizard", priority: 1)
+Spell.where(:name => "fireball").first.spell_descriptors<<(SpellDescriptor.where(:descriptor => "fire").first)
 
 
