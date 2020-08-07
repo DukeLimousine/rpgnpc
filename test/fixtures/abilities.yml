@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ability_classification_id: 1
+  name: MyString
+  times_per_day: 1
+  descriptor: MyString
+
+two:
+  ability_classification_id: 1
+  name: MyString
+  times_per_day: 1
+  descriptor: MyString
