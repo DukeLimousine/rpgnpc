@@ -84,4 +84,27 @@ Alignment.create(law_axis: 'chaotic', good_axis: 'good')
 Alignment.create(law_axis: 'chaotic', good_axis: 'neutral')
 Alignment.create(law_axis: 'chaotic', good_axis: 'evil')
 
+['acid',
+'air',
+'chaotic',
+'cold',
+'darkness',
+'death',
+'earth',
+'electricity',
+'evil',
+'fear',
+'fire',
+'force',
+'good',
+'language-dependent',
+'lawful',
+'light',
+'mind-affecting',
+'sonic',
+'water'].each do |d|
+	SpellDescriptor.create(descriptor: d)
+end
+
+
 
