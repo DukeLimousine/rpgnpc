@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_171943) do
+ActiveRecord::Schema.define(version: 2020_08_13_155705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2020_08_07_171943) do
 
   create_table "creature_classifications", force: :cascade do |t|
     t.string "classification"
+  end
+
+  create_table "familiars", force: :cascade do |t|
+    t.string "typenames"
+    t.integer "character_template_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "feats", force: :cascade do |t|
@@ -70,6 +77,12 @@ ActiveRecord::Schema.define(version: 2020_08_07_171943) do
     t.string "classification"
   end
 
+  create_table "name_positions", force: :cascade do |t|
+    t.string "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "names", force: :cascade do |t|
     t.integer "name_classification_id"
     t.string "name"
@@ -78,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_171943) do
     t.integer "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "name_position_id"
   end
 
   create_table "places", force: :cascade do |t|

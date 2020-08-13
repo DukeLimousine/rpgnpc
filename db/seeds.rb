@@ -13,6 +13,15 @@
 	NameClassification.create(classification: n)
 end
 
+['first',
+'last',
+'pre-title',
+'pre-pre-title',
+'gnomish-nickname',
+'post-title'].each do |n|
+	NamePosition.create(position: n)
+end
+
 ['human',
 'dwarf',
 'elf',
