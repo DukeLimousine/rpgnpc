@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_155705) do
+ActiveRecord::Schema.define(version: 2020_08_31_173729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2020_08_13_155705) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "abilities_character_templates", id: false, force: :cascade do |t|
+    t.bigint "character_template_id", null: false
+    t.bigint "ability_id", null: false
+    t.index ["ability_id"], name: "index_abilities_character_templates_on_ability_id"
+    t.index ["character_template_id"], name: "index_abilities_character_templates_on_character_template_id"
+  end
+
   create_table "ability_classifications", force: :cascade do |t|
     t.string "classification"
   end
@@ -35,6 +42,51 @@ ActiveRecord::Schema.define(version: 2020_08_13_155705) do
 
   create_table "char_classes", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "character_templates", force: :cascade do |t|
+    t.integer "str"
+    t.integer "dex"
+    t.integer "con"
+    t.integer "int"
+    t.integer "wis"
+    t.integer "cha"
+    t.integer "race_id"
+    t.integer "class_id"
+    t.integer "level"
+    t.integer "size_id"
+    t.integer "hit_dice"
+    t.integer "hit_points"
+    t.integer "creature_classification_id"
+    t.integer "initiative"
+    t.string "speed"
+    t.integer "armor_class"
+    t.integer "touch_ac"
+    t.integer "flat_footed_ac"
+    t.string "ac_types"
+    t.string "base_attack_bonus"
+    t.integer "grapple"
+    t.string "full_attack_melee"
+    t.string "full_attack_ranged"
+    t.string "melee_damage"
+    t.string "ranged_damage"
+    t.integer "fortitude"
+    t.integer "reflex"
+    t.integer "will"
+    t.string "skills"
+    t.string "spells_known"
+    t.string "spells_per_day"
+    t.integer "excess_gp"
+    t.integer "familiar_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "character_templates_feats", id: false, force: :cascade do |t|
+    t.bigint "character_template_id", null: false
+    t.bigint "feat_id", null: false
+    t.index ["character_template_id"], name: "index_character_templates_feats_on_character_template_id"
+    t.index ["feat_id"], name: "index_character_templates_feats_on_feat_id"
   end
 
   create_table "creature_classifications", force: :cascade do |t|
