@@ -8,7 +8,8 @@ module ApplicationHelper
   	case modelname
   		when 'name'
 		  	csv.each do |row|
-		  		puts row
+		  		new_name = Name.new(row.to_hash)
+		  		puts new_name.name
 		  	end
   	else
   		puts 'options are: name'
