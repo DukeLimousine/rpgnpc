@@ -15,8 +15,16 @@ module ApplicationHelper
 		  			puts new_name.name + " Saved!"
 		  		end
 		  	end
+		  when 'place'
+		  	csv.each do |row|
+		  		new_place = Place.new(row.to_hash)
+		  		if !Place.where(name: new_place.name).first
+		  			new_place.save!
+		  			puts new_place.name + " Saved!"
+		  		end
+		  	end
   	else
-  		puts 'options are: name'
+  		puts 'options are: name, place'
   	end
   end
 end

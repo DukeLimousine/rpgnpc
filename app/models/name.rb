@@ -33,7 +33,7 @@ class Name < ApplicationRecord
 	belongs_to :race, :foreign_key => "race_id"
 	belongs_to :name_position, :foreign_key => "name_position_id"
 
-  def generate_random_name(type=1, gender=0, race=7)
+  def generate_random_name(type=2, gender=0, race=4)
   	@random_name = ""
   	case type
   	when 1 #normal
@@ -41,10 +41,20 @@ class Name < ApplicationRecord
 		@random_name = first_and_last_name[0]
 		@random_name = first_and_last_name.size > 1 ? @random_name + " " + first_and_last_name[1] : @random_name
 	when 2 #epic
+		name_type = race == 4 ? 4 : 1
+		normal_name = generate_random_name(name_type, gender, race) #oops all recursion
+		pre_title = Name.where(name_position_id: 3, gender: [gender, 2]).sample.name
+		if pre_title.include? "X_"
+			pre_title = pre_title.gsub(/X_/, Name.where(name_position_id: 4, gender: [gender,2]).sample.name)
+		end
+		pre_title = pre_title.capitalize
+		@random_name = pre_title + " " + normal_name
 	when 3 #mount
 		@random_name = Name.where(name_classification_id: 3, gender: gender).sample.name.capitalize
 	when 4 #gnomish_nickname
 		first_and_last_name = get_first_last(gender, race)
+		nickname = Name.where(name_classification_id: 4).sample.name.capitalize
+		@random_name = first_and_last_name[0] + " \"" + nickname + "\" " + first_and_last_name[1]
 	else
 		puts "Error in Name.generate_random_name - invalid argument"
 		@random_name = "Pat Bones"
