@@ -1,5 +1,6 @@
 require 'csv'
 
+
 module ApplicationHelper
   def parse_csv(filepath, modelname)
   	csv_text = File.read(filepath)
