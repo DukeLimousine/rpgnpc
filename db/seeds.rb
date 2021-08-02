@@ -28,7 +28,8 @@ end
 'gnome',
 'half-elf',
 'half-orc',
-'halfling'].each do |r|
+'halfling',
+'mount'].each do |r|
 	Race.create(name: r)
 end
 
