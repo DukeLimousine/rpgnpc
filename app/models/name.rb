@@ -49,6 +49,16 @@ class Name < ApplicationRecord
 		end
 		pre_title = pre_title.capitalize
 		@random_name = pre_title + " " + normal_name
+	    if rand(100) < 51 #roll 50% chance for post title
+	    	post_title = Name.where(name_position_id: 6, gender: [gender, 2]).sample.name
+	    	if post_title.include? "X_num"
+	    		post_title = post_title.gsub(/X_num/, rand(100).to_s)
+	    	end
+	    	if post_title.include? "X_place"
+	    		post_title = post_title.gsub(/X_place/, Place.all.sample.name)
+	    	end
+	    	@random_name = @random_name + ", " + post_title.titleize
+		end
 	when 3 #mount
 		@random_name = Name.where(name_classification_id: 3, gender: gender).sample.name.capitalize
 	when 4 #gnomish_nickname

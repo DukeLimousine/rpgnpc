@@ -117,6 +117,6 @@ name_classification_id,name,race_id,epic,gender,name_position_id
 2,X_magistrate,1,TRUE,2,3
 2,esquire,1,TRUE,2,6
 2,the destroyer,1,TRUE,2,6
-2,", presiding",1,TRUE,2,6
-2,keeper of the X keys,1,TRUE,2,6
+2,"presiding",1,TRUE,2,6
+2,keeper of the X_num keys,1,TRUE,2,6
 2,heir to X_place,1,TRUE,2,6
