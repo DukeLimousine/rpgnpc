@@ -1,7 +1,7 @@
 <h1>Hello nerds</h1>
 <h2><%= Name.new.generate_random_name %></h2>
 <div class="name-generator">
-  <form>
+  <form action="/content/generate_name" method="get">
   	<label for="race-selector">Select Race</label>
 	<%= select_tag "race-selector", options_for_select(Race.all.collect{ |r| [r.name.capitalize, r.id]}), {class: 'race-selector'} %>
 	<label for="gender-selector">Select Gender (or Don't)</label>
