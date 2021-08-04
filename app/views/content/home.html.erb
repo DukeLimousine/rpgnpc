@@ -1,14 +1,14 @@
 <h1>Hello nerds</h1>
-<h2><%= Name.new.generate_random_name %></h2>
-<div class="name-generator">
+<h2><%= @name %></h2>
+<div class="name_generator">
   <form action="/content/generate_name" method="get">
-  	<label for="race-selector">Select Race</label>
-	<%= select_tag "race-selector", options_for_select(Race.all.collect{ |r| [r.name.capitalize, r.id]}), {class: 'race-selector'} %>
-	<label for="gender-selector">Select Gender (or Don't)</label>
-	<%= select_tag "gender-selector", raw("<option>Female</option><option>Male</option><option>Neutral</option>"), {class: 'gender-selector'} %>
-	<label for="is-epic">EPIC</label>
-	<%= check_box_tag "is-epic", 1, false, {class: 'is-epic'} %>
+  	<label for="race_selector">Select Race</label>
+	<%= select_tag "race_selector", options_for_select(Race.all.collect{ |r| [r.name.capitalize, r.id]}), {class: 'race_selector'} %>
+	<label for="gender_selector">Select Gender (or Don't)</label>
+	<%= select_tag "gender_selector", raw("<option>Female</option><option>Male</option><option>Neutral</option>"), {class: 'gender-selector'} %>
+	<label for="is_epic">EPIC</label>
+	<%= check_box_tag "is_epic", 1, false, {class: 'is_epic'} %>
 
-  	<%= button_tag 'Generate Name', {class: 'generate-name', role: 'button'} %>
+  	<%= button_tag 'Generate Name', {class: 'generate_name', role: 'button'} %>
   </form>
 </div>
