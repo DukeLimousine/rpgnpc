@@ -4,6 +4,7 @@
 # 3: mount
 # 4: gnomish_nickname
 
+# TODO: make this an actual table
 # Gender:
 # 0: male
 # 1: female
@@ -33,7 +34,7 @@ class Name < ApplicationRecord
 	belongs_to :race, :foreign_key => "race_id"
 	belongs_to :name_position, :foreign_key => "name_position_id"
 
-  def generate_random_name(type=2, gender=0, race=4)
+  def generate_random_name(type=2, gender=0, race=4) #TODO: not possible to have a gnomish regular name
   	@random_name = ""
   	if race == 5 #if half-elf, set to either human or elf randomly
   		race = rand(100) < 51 ? 1 : 3
