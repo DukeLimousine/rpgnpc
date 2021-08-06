@@ -34,8 +34,11 @@ class Name < ApplicationRecord
 	belongs_to :race, :foreign_key => "race_id"
 	belongs_to :name_position, :foreign_key => "name_position_id"
 
-  def generate_random_name(type=2, gender=0, race=4) #TODO: not possible to have a gnomish regular name
+  def generate_random_name(type, gender, race) #TODO: not possible to have a gnomish regular name
   	@random_name = ""
+  	race = race.to_i
+  	type = type ? 2 : 1 #TODO this is ugly
+  	gender = gender.to_i
   	if race == 5 #if half-elf, set to either human or elf randomly
   		race = rand(100) < 51 ? 1 : 3
   	end
@@ -46,7 +49,7 @@ class Name < ApplicationRecord
 		@random_name = first_and_last_name.size > 1 ? @random_name + " " + first_and_last_name[1] : @random_name
 	when 2 #epic TODO: break this out into a separate function
 		name_type = race == 4 ? 4 : 1
-		normal_name = generate_random_name(name_type, gender, race) #oops all recursion
+		normal_name = "John Gotti" #generate_random_name(name_type, gender, race) #oops all recursion
 		# if gender is neutral (2) retrieve any name that matches position. Otherwise, get name of the matching gender or a neutral gender name (2)
 		pre_title = gender == 2 ? Name.where(name_position_id: 3).sample.name : Name.where(name_position_id: 3, gender: [gender, 2]).sample.name
 		if pre_title.include? "X_"
