@@ -102,7 +102,7 @@ name_classification_id,name,race_id,epic,gender,name_position_id
 4,stumbleduck,4,FALSE,2,5
 2,power,1,TRUE,2,4
 2,murder,1,TRUE,2,4
-2,uber,1,TRUE,2,4
+2,über,1,TRUE,2,4
 2,battle,1,TRUE,2,4
 2,slaughter,1,TRUE,2,4
 2,duke,1,TRUE,0,3
