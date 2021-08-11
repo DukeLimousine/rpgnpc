@@ -116,10 +116,15 @@ name_classification_id,name,race_id,epic,gender,name_position_id
 2,magistrate,1,TRUE,2,3
 2,X_magistrate,1,TRUE,2,3
 2,esquire,1,TRUE,2,6
+2,the executioner,1,TRUE,2,6
 2,the destroyer,1,TRUE,2,6
 2,presiding,1,TRUE,2,6
 2,keeper of the X_num keys,1,TRUE,2,6
 2,heir to X_place,1,TRUE,2,6
+2,savior of X_place,1,TRUE,2,6
+2,chosen of X_place,1,TRUE,2,6
+2,scourge of X_place,1,TRUE,2,6
+2,herald of the X_num martyrs,1,TRUE,2,6
 1,barendd,2,FALSE,0,1
 1,brottor,2,FALSE,0,1
 1,eberk,2,FALSE,0,1
@@ -185,4 +190,35 @@ name_classification_id,name,race_id,epic,gender,name_position_id
 1,gemblossom,3,FALSE,2,2
 1,goldpetal,3,FALSE,2,2
 1,Calgar,1,FALSE,2,2
-1,Cynthia,1,FALSE,1,1
+1,cynthia,1,FALSE,1,1
+1,hildegarde,1,FALSE,1,1
+1,joan,1,FALSE,1,1
+1,myrtle,1,FALSE,1,1
+1,anna,1,FALSE,1,1
+1,elizabeth,1,FALSE,1,1
+1,hadiza,1,FALSE,1,1
+1,nala,1,FALSE,1,1
+1,sade,1,FALSE,1,1
+1,zendaya,1,FALSE,1,1
+1,belinda,1,FALSE,1,1
+1,lastima,1,FALSE,1,1
+1,calista,1,FALSE,1,1
+1,mikeaus,1,FALSE,0,1
+1,thor,1,FALSE,0,1
+1,malik,1,FALSE,0,1
+1,henron,1,FALSE,0,1
+1,bartholomew,1,FALSE,0,1
+1,manfred,1,FALSE,0,1
+1,kalax,1,FALSE,0,1
+1,gordon,1,FALSE,0,1
+1,herbert,1,FALSE,0,1
+1,brody,1,FALSE,0,1
+1,karthon,1,FALSE,0,1
+1,regal,1,FALSE,2,2
+1,jonnson,1,FALSE,2,2
+1,dunnoughor,1,FALSE,2,2
+1,tartuffe,1,FALSE,2,2
+1,brigliarri,1,FALSE,2,2
+1,rodan,1,FALSE,2,2
+1,viktorian,1,FALSE,2,2
+1,heimhall,1,FALSE,2,2
