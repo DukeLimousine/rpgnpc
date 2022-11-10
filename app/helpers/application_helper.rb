@@ -1,3 +1,5 @@
+# ex: helper.parse_csv('Places.csv', 'place')
+
 require 'csv'
 
 
